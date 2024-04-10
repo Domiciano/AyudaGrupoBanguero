@@ -24,7 +24,7 @@ public class Doctor {
     private String password;
 
     @ManyToOne
-    @JoinColumn(name = "adminID")
+    @JoinColumn(name = "admin")
     private Admin admin;
 
     @OneToMany(mappedBy = "doctor")
