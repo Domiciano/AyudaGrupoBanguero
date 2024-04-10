@@ -1,11 +1,19 @@
 package com.example.backtms.entity;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
 @Entity
 @Table(name = "doctor")
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
 public class Doctor {
 
     @Id
@@ -22,8 +30,7 @@ public class Doctor {
     @OneToMany(mappedBy = "doctor")
     private List<Patient> patients;
 
-    public Doctor() {
-    }
+    public Doctor() {}
 
     public Doctor(String username, String password, Admin admin) {
         this.username = username;
